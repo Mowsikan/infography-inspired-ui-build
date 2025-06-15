@@ -71,8 +71,19 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-gray-600">Sign In</Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">Sign Up</Button>
+            <Button 
+              variant="ghost" 
+              className="text-gray-600"
+              onClick={() => navigate('/signin')}
+            >
+              Sign In
+            </Button>
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={() => navigate('/signup')}
+            >
+              Sign Up
+            </Button>
           </div>
 
           <button 
@@ -117,8 +128,19 @@ const Header = () => {
                 Contact
               </button>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="ghost" className="text-gray-600 w-full">Sign In</Button>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">Sign Up</Button>
+                <Button 
+                  variant="ghost" 
+                  className="text-gray-600 w-full"
+                  onClick={() => navigate('/signin')}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white w-full"
+                  onClick={() => navigate('/signup')}
+                >
+                  Sign Up
+                </Button>
               </div>
             </nav>
           </div>

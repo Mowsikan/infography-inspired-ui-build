@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
-import { Upload, Zap } from 'lucide-react';
+import { Upload, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Textarea } from '@/components/ui/textarea';
+import { useNavigate } from 'react-router-dom';
 
 const SolutionGenerator = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [context, setContext] = useState('');
   const [activeTab, setActiveTab] = useState('service');
+  const navigate = useNavigate();
 
   const services = [
     'Cloud Consultation',
@@ -111,12 +113,22 @@ const SolutionGenerator = () => {
                   <li>• Secure multi-cloud architecture</li>
                 </ul>
                 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-6 mb-4">
-                  <Zap className="w-5 h-5 mr-2" />
-                  Generate My Cloud Solution (1 credit)
-                </Button>
+                <div className="space-y-3">
+                  <Button 
+                    onClick={() => navigate('/solution-generator')}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-6"
+                  >
+                    <Zap className="w-5 h-5 mr-2" />
+                    Open Advanced Generator
+                  </Button>
+                  
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-6">
+                    <ArrowRight className="w-5 h-5 mr-2" />
+                    Generate Quick Solution (1 credit)
+                  </Button>
+                </div>
                 
-                <p className="text-sm text-blue-300 text-center">
+                <p className="text-sm text-blue-300 text-center mt-4">
                   Tip: Not enough credits? 
                   <a href="#pricing" className="text-blue-400 hover:underline ml-1">
                     Purchase 50 Credits for $10
